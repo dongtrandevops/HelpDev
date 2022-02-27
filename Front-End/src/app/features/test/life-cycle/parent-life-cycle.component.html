@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col-6  p-3">
+    <div class="parent">
+      <h2>Parent</h2>
+      <mat-form-field appearance="fill">
+        <mat-label>ngOnchange</mat-label>
+        <input matInput [(ngModel)]="ngOnchange">
+      </mat-form-field>
+      <p *ngFor="let item of ngAfterContentInitData">
+        ngAfterContentInit ----- {{item}}
+      </p>
+
+      <br>
+      <mat-form-field appearance="fill">
+        <input matInput [(ngModel)]="ngAfterContentChecked" (input)="onAfterContentChecked($event)">
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div class="col-6  p-3">
+    <div class="child">
+      <h2>Child</h2>
+      <hd-child-life-cycle [ngOnchange]="ngOnchange">
+        <!-- <div #content *ngIf="isShowContent">
+          ngAfterContentChecked {{ngAfterContentChecked}}
+        </div> -->
+      </hd-child-life-cycle>
+    </div>
+  </div>
+</div>

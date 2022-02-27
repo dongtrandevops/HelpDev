@@ -1,0 +1,87 @@
+@import "color";
+
+.left-menu-accordion {
+  a.actived-parent-menu {
+    background-color: $actived-orverlay-indigo;
+    color: $indigo;
+
+    &:hover,
+    &:focus {
+      background-color: $actived-orverlay-indigo;
+    }
+
+    mat-icon {
+      color: $indigo;
+    }
+  }
+
+  mat-panel-title {
+    font-size: 16px;
+    align-items: center;
+  }
+
+  mat-expansion-panel {
+    border-radius: 0;
+    box-shadow: none !important;
+
+    mat-expansion-panel-header {
+      padding-left: 16px;
+      padding-right: 16px;
+      &:hover {
+        background: $black-04-opacity;
+      }
+    }
+
+    ::ng-deep .mat-expansion-panel-body {
+      padding: 0 24px;
+    }
+
+    .child-menu {
+      height: 40px;
+      ::ng-deep .mat-list-item-content {
+        padding-left: 34px;
+      }
+    }
+  }
+
+  mat-icon {
+    margin-right: 16px;
+    color: $grey-600;
+  }
+
+  .mat-actived-expansion-panel-header {
+    background-color: $actived-orverlay-indigo;
+
+    &:hover {
+      background: $actived-orverlay-indigo !important;
+    }
+
+    &:focus {
+      background: $actived-orverlay-indigo;
+    }
+
+    .mat-expansion-panel-header-title {
+      color: $indigo;
+      .mat-icon {
+        color: $indigo;
+      }
+    }
+
+    ::ng-deep .mat-expansion-indicator {
+      &:after {
+        color: $indigo;
+      }
+    }
+  }
+
+  a.actived-child-menu {
+    &:hover {
+      color: $indigo;
+    }
+    &:focus {
+      color: $indigo;
+      background: $white;
+    }
+    color: $indigo;
+  }
+}

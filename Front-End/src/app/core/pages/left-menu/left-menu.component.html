@@ -1,0 +1,23 @@
+<mat-toolbar></mat-toolbar>
+<mat-nav-list>
+  <mat-accordion class="left-menu-accordion" multi [displayMode]="'flat'" #menu>
+    <ng-container *ngFor="let menu of menus; let index = index">
+      <a *ngIf="!menu.childMenus" mat-list-item [routerLink]="[menu.routerLink]" [routerLinkActive]="['actived-parent-menu']"
+        (click)="onClickParentMenu(index)">
+        <mat-icon>{{menu.matIcon}}</mat-icon> {{menu.name}}
+      </a>
+
+      <mat-expansion-panel [expanded]="menu.isExpanded" *ngIf="menu.childMenus" [@.disabled]="isDisableAnimation">
+        <mat-expansion-panel-header [expandedHeight]="'48px'" [ngClass]="menu.isActived ? 'mat-actived-expansion-panel-header' : ''">
+          <mat-panel-title>
+            <mat-icon>{{menu.matIcon}}</mat-icon> {{menu.name}}
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+  
+        <a *ngFor="let childMenu of menu.childMenus" class="child-menu" mat-list-item [routerLink]="[childMenu.routerLink]" [routerLinkActive]="['actived-child-menu']" (click)="onClickChildMenu(menu)">
+          {{childMenu.name}}
+        </a>
+      </mat-expansion-panel>
+    </ng-container>
+  </mat-accordion>
+</mat-nav-list>
