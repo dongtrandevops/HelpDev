@@ -1,0 +1,3 @@
+[submodule "CShapUtilities"]
+	path = CShapUtilities
+	url = https://github.com/dongtrandevops/CShapUtilities.git
