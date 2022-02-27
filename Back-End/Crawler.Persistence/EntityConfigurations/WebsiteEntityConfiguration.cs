@@ -1,5 +1,5 @@
 ﻿using Crawler.Domain.Entities;
-using HelpDev.Common.Http;
+using CShapUtilities.Constants.Https;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;

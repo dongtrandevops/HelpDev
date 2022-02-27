@@ -17,7 +17,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\HelpDev.Common\HelpDev.Common\HelpDev.Common.csproj" />
+    <ProjectReference Include="..\..\CShapUtilities\CShapUtilities.Constants\CShapUtilities.Constants.csproj" />
+    <ProjectReference Include="..\..\CShapUtilities\CShapUtilities.Methods\CShapUtilities.Methods.csproj" />
     <ProjectReference Include="..\Crawler.Domain\Crawler.Domain.csproj" />
   </ItemGroup>
 
