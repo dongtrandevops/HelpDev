@@ -1,0 +1,11 @@
+﻿global using System;
+global using System.Collections.Generic;
+global using System.Linq;
+global using System.Text;
+global using System.Threading.Tasks;
+global using AutoMapper;
+global using Crawler.Domain.Entities;
+global using Microsoft.Extensions.DependencyInjection;
+global using Crawler.Application.AutoMapperProfile;
+global using Crawler.Application.Interfaces;
+global using Crawler.Application.Services;

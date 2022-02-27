@@ -1,0 +1,2 @@
+﻿for %f in (D:\Working\HelpDevNew\Back-End\Crawler.Persistence\Migrations\Scripts\SeedData\*.sql) do sqlcmd -S .\SQLEXPRESS -d CrawlerNew -i %f
+
