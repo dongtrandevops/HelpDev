@@ -37,7 +37,7 @@ export class SettingWebsiteComponent implements OnInit {
     'Episode IX – The Rise of Skywalker',
   ];
 
-  drop(event: CdkDragDrop<string[]>) {
+  drop(event: any) {
     moveItemInArray(this.movies, event.previousIndex, event.currentIndex);
   }
 }
