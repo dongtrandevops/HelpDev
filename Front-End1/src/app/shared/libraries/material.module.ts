@@ -9,6 +9,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatInputModule } from '@angular/material/input';
 import { MatSliderModule } from '@angular/material/slider';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [],
@@ -25,7 +26,8 @@ import { MatSliderModule } from '@angular/material/slider';
     MatSelectModule,
     MatCheckboxModule,
     MatInputModule,
-    MatSliderModule
+    MatSliderModule,
+    DragDropModule
   ]
 })
 export class MaterialModule { }

@@ -5,4 +5,5 @@ export interface WebsiteDTO {
     img: string;
     order: number | null;
     requestHeaderCookie: string;
+    isSelected: boolean
 }

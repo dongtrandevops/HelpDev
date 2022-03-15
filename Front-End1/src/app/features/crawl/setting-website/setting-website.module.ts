@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { SettingWebsiteRoutingModule } from './setting-website-routing.module';
 import { SettingWebsiteComponent } from './setting-website.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { SettingWebsiteComponent } from './setting-website.component';
   ],
   imports: [
     CommonModule,
-    SettingWebsiteRoutingModule
+    SettingWebsiteRoutingModule,
+    SharedModule
   ]
 })
 export class SettingWebsiteModule { }

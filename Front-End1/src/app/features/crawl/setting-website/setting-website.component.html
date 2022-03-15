@@ -1,15 +1,56 @@
-<!-- <div class="container">
+<div class="container">
+  <form [formGroup]="websiteFormGroup">
     <div class="row">
-        <div class="col">1</div>
-        <div class="col">
-            <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
-                <div class="example-box" *ngFor="let website of websites" cdkDrag>{{website.name}}</div>
-            </div>
+      <div class="col">
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="w-100" appearance="fill">
+              <mat-label>Url</mat-label>
+              <input matInput formControlName="url">
+
+              <mat-error *ngIf="websiteFormGroup.get('url')?.hasError('required')">
+                Url is required
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="col">
+            <mat-form-field class="w-100" appearance="fill">
+              <mat-label>Name</mat-label>
+              <input matInput formControlName="name">
+
+              <mat-error *ngIf="websiteFormGroup.get('name')?.hasError('required')">
+                Name is required
+              </mat-error>
+            </mat-form-field>
+          </div>
         </div>
+
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="w-100" appearance="fill">
+              <mat-label>Cookie header</mat-label>
+              <textarea cols="30" rows="13" matInput formControlName="requestHeaderCookie"></textarea>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div cdkDropList class="example-list w-100" (cdkDropListDropped)="onDroped($event)">
+          <div *ngFor="let website of websites let i = index" class="example-box"
+            [ngClass]="website.isSelected ? 'selected-website':''" cdkDrag (click)="onClickWebsite(website, i)">
+            {{website.name}}
+          </div>
+        </div>
+      </div>
     </div>
-</div> -->
 
-
-<div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
-    <div class="example-box" *ngFor="let movie of movies" cdkDrag>{{movie}}</div>
-  </div>
+    <div class="row">
+      <div class="col w-100">
+        <button class="float-end" mat-raised-button color="primary">Save</button>
+        <button class="float-end me-2" (click)="onResetForm()" mat-raised-button>Reset</button>
+      </div>
+    </div>
+  </form>
+</div>
