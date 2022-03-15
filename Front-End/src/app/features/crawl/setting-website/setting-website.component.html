@@ -1,13 +1,15 @@
-<div class="container">
+<!-- <div class="container">
     <div class="row">
         <div class="col">1</div>
         <div class="col">
-            <!-- <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
-                <div class="example-box" *ngFor="let movie of movies" cdkDrag>{{movie}}</div>
-            </div> -->2
+            <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+                <div class="example-box" *ngFor="let website of websites" cdkDrag>{{website.name}}</div>
+            </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col">3</div>
-    </div>
-</div>
+</div> -->
+
+
+<div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+    <div class="example-box" *ngFor="let movie of movies" cdkDrag>{{movie}}</div>
+  </div>

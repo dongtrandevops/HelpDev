@@ -62,12 +62,16 @@ export class MenuService {
             routerLink: '/test/change-detection',
           },
           {
-            name: 'Change Detection',
-            routerLink: '/test/change-detection',
-          },
-          {
             name: 'Lifecycle',
             routerLink: '/test/life-cycle',
+          },
+          {
+            name: 'Form',
+            routerLink: '/test/form',
+          },
+          {
+            name: 'RxJs',
+            routerLink: '/test/rxjs',
           },
           {
             name: 'View Encapsulation',

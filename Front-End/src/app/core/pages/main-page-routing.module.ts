@@ -46,6 +46,14 @@ const routes: Routes = [
       {
         path: 'test/bootstrap',
         loadChildren: () => import('../../features/test/bootstrap/bootstrap.module').then(c => c.BootstrapModule)
+      },
+      {
+        path: 'test/form',
+        loadChildren: () => import('../../features/test/form-rxjs/form-rxjs.module').then(c => c.FormRxjsModule)
+      },
+      {
+        path: 'test/rxjs',
+        loadChildren: () => import('../../features/test/test-rxjs/test-rxjs.module').then(c => c.TestRxjsModule)
       }
     ]
   }
