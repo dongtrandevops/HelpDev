@@ -10,7 +10,7 @@
         }
 
         #region Query
-        public async Task<TEntity> GetByKeysAsync(params object[] keys)
+        public virtual async Task<TEntity> GetByKeysAsync(params object[] keys)
         {
             return await _db.Set<TEntity>().FindAsync(keys);
         }
@@ -22,13 +22,13 @@
         #endregion Query
 
         #region Insert
-        public async Task<TEntity> InsertAsync(TEntity entity)
+        public virtual async Task<TEntity> InsertAsync(TEntity entity)
         {
             await _db.AddAsync(entity);
             return entity;
         }
 
-        public async Task<IEnumerable<TEntity>> InsertRangeAsync(IEnumerable<TEntity> entities)
+        public virtual async Task<IEnumerable<TEntity>> InsertRangeAsync(IEnumerable<TEntity> entities)
         {
             await _db.AddRangeAsync(entities);
             return entities;
@@ -57,7 +57,7 @@
         }
         #endregion Update
 
-        public async Task<int> SaveChangeAsync()
+        public virtual async Task<int> SaveChangeAsync()
         {
             return await _db.SaveChangesAsync();
         }

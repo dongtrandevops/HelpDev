@@ -2,8 +2,9 @@
 
 namespace Crawler.Application.Interfaces
 {
-    public interface IBaseService<TEntity> where TEntity : BaseEntity, new()
+    public interface IBaseService<TEntity, TResult> where TEntity : BaseEntity, new()
     {
-        Task<IEnumerable<TResult>> GetAllAsync<TResult>();
+        Task<IEnumerable<TResult>> GetAllAsync();
+        Task UpdateAsync(TResult viewModel, params object[] keys);
     }
 }

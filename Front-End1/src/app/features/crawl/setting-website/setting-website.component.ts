@@ -14,6 +14,7 @@ export class SettingWebsiteComponent implements OnInit {
   isDisabledResetBtn: boolean = true;
 
   websiteFormGroup = new FormGroup({
+    id: new FormControl(0),
     url: new FormControl('', [Validators.required]),
     name: new FormControl('', [Validators.required]),
     requestHeaderCookie: new FormControl(''),
@@ -46,6 +47,14 @@ export class SettingWebsiteComponent implements OnInit {
   setColorSelectedWebsite(index: number) {
     this.websites.forEach(c => c.isSelected = false);
     this.websites[index].isSelected = true;
+  }
+
+  onSubmit() {
+    const model = { ...this.websiteFormGroup.value } as WebsiteDTO;
+    this.websiteService.update(model, model.id).subscribe(
+      success => {
+      }
+    );
   }
 
   onResetForm() {

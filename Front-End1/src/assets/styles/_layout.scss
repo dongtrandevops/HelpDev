@@ -55,3 +55,9 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}

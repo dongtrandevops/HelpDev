@@ -15,4 +15,8 @@ export class WebsiteService {
     getAll() {
         return this.http.get<WebsiteDTO[]>(`${environment.crawlerApi}/websites`);
     }
+
+    update(model: WebsiteDTO, id: number) {
+        return this.http.put(`${environment.crawlerApi}/websites/${id}`, model);
+    }
 }

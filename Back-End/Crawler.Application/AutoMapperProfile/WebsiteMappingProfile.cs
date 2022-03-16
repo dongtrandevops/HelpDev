@@ -11,7 +11,7 @@ namespace Crawler.Application.AutoMapperProfile
     {
         public WebsiteMappingProfile()
         {
-            CreateMap<WebsiteEntity, WebsiteDTO>();
+            CreateMap<WebsiteEntity, WebsiteDTO>().ReverseMap();
         }
     }
 }

@@ -3,7 +3,7 @@ using Crawler.Domain.Repositories;
 
 namespace Crawler.Application.Services
 {
-    public class BaseService<TEntity> : IBaseService<TEntity> where TEntity : BaseEntity, new()
+    public class BaseService<TEntity, TResult> : IBaseService<TEntity, TResult> where TEntity : BaseEntity, new()
     {
         protected readonly IBaseRepository<TEntity> _repository;
         protected readonly IMapper _mapper;
@@ -17,12 +17,20 @@ namespace Crawler.Application.Services
         }
 
         #region Query
-        public async Task<IEnumerable<TResult>> GetAllAsync<TResult>()
+        public virtual async Task<IEnumerable<TResult>> GetAllAsync()
         {
             var entities = await _repository.GetAllAsync();
             var data = _mapper.Map<IEnumerable<TResult>>(entities);
             return data;
         }
         #endregion Query
+
+        public virtual async Task UpdateAsync(TResult viewModel, params object[] keys)
+        {
+            var entity = await _repository.GetByKeysAsync(keys);
+            _mapper.Map(viewModel, entity);
+            _repository.Update(entity);
+            await _repository.SaveChangeAsync();
+        }
     }
 }

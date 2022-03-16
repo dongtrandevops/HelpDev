@@ -6,7 +6,7 @@ namespace Crawler.Application
         public static IServiceCollection AddApplicationService(this IServiceCollection services)
         {
             ////Application
-            services.AddTransient(typeof(IBaseService<>), typeof(BaseService<>));
+            services.AddTransient(typeof(IBaseService<,>), typeof(BaseService<,>));
             services.AddTransient<IWebsiteService, WebsiteService>();
 
             ////Crawler

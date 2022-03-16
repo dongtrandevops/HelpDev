@@ -21,7 +21,7 @@ var connectionString = builder.Configuration.GetConnectionString("Crawler");
 builder.Services.AddControllers().AddNewtonsoftJson(options =>
 {
     options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
-    options.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
+    //options.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
 });
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

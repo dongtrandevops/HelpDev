@@ -19,15 +19,15 @@ namespace Crawler.Api.Controllers
         [HttpGet()]
         public async Task<IActionResult> GetAllAsync()
         {
-            var result = await _websiteService.GetAllAsync<WebsiteDTO>();
+            var result = await _websiteService.GetAllAsync();
             return Ok(result);
         }
 
-        //[HttpPut("{id}")]
-        //public async Task<IActionResult> UpdateAsync(long id)
-        //{
-        //    var result = await _websiteService.GetByKeysAsync(id);
-        //    return Ok(result);
-        //}
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateAsync(long id, WebsiteDTO viewModel)
+        {
+            await _websiteService.UpdateAsync(viewModel, id);
+            return Ok();
+        }
     }
 }

@@ -8,7 +8,7 @@ namespace Crawler.Application.DTOs.Website
 {
     public class WebsiteDTO
     {
-        public long Id{ get; set; }
+        public long Id { get; set; }
         public string Name { get; set; }
         public string Url { get; set; }
         public string Img { get; set; }
