@@ -32,5 +32,12 @@ namespace Crawler.Application.Services
             _repository.Update(entity);
             await _repository.SaveChangeAsync();
         }
+
+        public virtual async Task UpdateRangeAsync(IEnumerable<TResult> viewModels)
+        {
+            var entities = _mapper.Map<IEnumerable<TEntity>>(viewModels);
+            _repository.UpdateRange(entities);
+            await _repository.SaveChangeAsync();
+        }
     }
 }

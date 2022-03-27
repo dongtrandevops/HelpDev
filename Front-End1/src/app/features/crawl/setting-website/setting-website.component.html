@@ -1,4 +1,5 @@
 <div class="container">
+  
   <form [formGroup]="websiteFormGroup" (ngSubmit)="onSubmit()">
     <div class="row">
       <div class="col">
@@ -30,11 +31,13 @@
           <div class="col">
             <mat-form-field class="w-100" appearance="fill">
               <mat-label>Cookie</mat-label>
-              <textarea class="cookie-container" spellcheck="false" matInput formControlName="requestHeaderCookie"></textarea>
+              <textarea class="cookie-container" spellcheck="false" matInput
+                formControlName="requestHeaderCookie"></textarea>
             </mat-form-field>
           </div>
         </div>
       </div>
+      
 
       <div class="col">
         <div cdkDropList class="example-list w-100" (cdkDropListDropped)="onDroped($event)">
@@ -48,8 +51,9 @@
 
     <div class="row">
       <div class="col w-100">
-        <button type="submit" class="float-end" mat-raised-button color="primary">Save</button>
-        <button type="button" class="float-end me-2" (click)="onResetForm()" mat-raised-button>Reset</button>
+        <hd-shared-button [isLoading]="isSaving" [type]="buttonType.Submit" class="float-end">SAVE</hd-shared-button>
+        <button [type]="buttonType.Reset" class="float-end me-2" (click)="onResetForm()"
+          mat-raised-button>Reset</button>
       </div>
     </div>
   </form>

@@ -54,6 +54,10 @@ const routes: Routes = [
       {
         path: 'test/rxjs',
         loadChildren: () => import('../../features/test/test-rxjs/test-rxjs.module').then(c => c.TestRxjsModule)
+      },
+      {
+        path: 'test/something',
+        loadChildren: () => import('../../features/test/test-something/test-something.module').then(c => c.TestSomethingModule)
       }
     ]
   }

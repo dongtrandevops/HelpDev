@@ -10,6 +10,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatInputModule } from '@angular/material/input';
 import { MatSliderModule } from '@angular/material/slider';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 @NgModule({
   declarations: [],
@@ -27,7 +29,9 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     MatCheckboxModule,
     MatInputModule,
     MatSliderModule,
-    DragDropModule
+    DragDropModule,
+    MatProgressSpinnerModule,
+    MatProgressBarModule
   ]
 })
 export class MaterialModule { }

@@ -54,6 +54,10 @@ export class MenuService {
         matIcon: 'delete',
         childMenus: [
           {
+            name: 'Something',
+            routerLink: '/test/something',
+          },
+          {
             name: 'Responsive',
             routerLink: '/test/responsive',
           },

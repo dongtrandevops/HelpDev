@@ -1,0 +1,9 @@
+<div class="shared-button-container">
+	<div *ngIf="isLoading" class="mat-spinner-container" >
+		<mat-spinner diameter="26"></mat-spinner>
+		<!-- <mat-progress-bar mode="indeterminate"></mat-progress-bar> -->
+	</div>
+	<button [type]="type" mat-raised-button color="primary" disabled="true" [disabled]="isLoading">
+		<ng-content></ng-content>
+	</button>
+</div>

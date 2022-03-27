@@ -19,4 +19,12 @@ export class WebsiteService {
     update(model: WebsiteDTO, id: number) {
         return this.http.put(`${environment.crawlerApi}/websites/${id}`, model);
     }
+
+    updateRange(models: WebsiteDTO[]) {
+        return this.http.put(`${environment.crawlerApi}/websites`, models);
+    }
+
+    add(model: WebsiteDTO) {
+        return this.http.post(`${environment.crawlerApi}/websites`, model);
+    }
 }

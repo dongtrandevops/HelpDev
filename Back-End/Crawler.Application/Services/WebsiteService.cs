@@ -13,10 +13,5 @@ namespace Crawler.Application.Services
         public WebsiteService(IMapper mapper, IWebsiteRepository repository) : base(mapper, repository)
         {
         }
-
-        //public override async Task UpdateAsync(WebsiteDTO viewModel, params object[] keys)
-        //{
-        //    var data = viewModel.RequestHeaderCookie.Split("\n");
-        //}
     }
 }

@@ -6,5 +6,6 @@ namespace Crawler.Application.Interfaces
     {
         Task<IEnumerable<TResult>> GetAllAsync();
         Task UpdateAsync(TResult viewModel, params object[] keys);
+        Task UpdateRangeAsync(IEnumerable<TResult> viewModels);
     }
 }

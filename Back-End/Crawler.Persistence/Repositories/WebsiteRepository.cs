@@ -21,7 +21,13 @@ namespace Crawler.Persistence.Repositories
                 Name = c.Name,
                 RequestHeaderCookie = c.RequestHeaderCookie,
                 Order = c.Order
-            }).ToListAsync();
+            }).OrderBy(c => c.Order).ToListAsync();
+            return websites;
+        }
+
+        public async Task<IEnumerable<WebsiteEntity>> GetListAsync(IEnumerable<long> ids)
+        {
+            var websites = await _db.Website.Where(c => ids.Contains(c.Id)).ToListAsync();
             return websites;
         }
     }

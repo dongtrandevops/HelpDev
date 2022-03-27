@@ -29,5 +29,12 @@ namespace Crawler.Api.Controllers
             await _websiteService.UpdateAsync(viewModel, id);
             return Ok();
         }
+
+        [HttpPut()]
+        public async Task<IActionResult> UpdateRangeAsync(IEnumerable<WebsiteDTO> viewModels)
+        {
+            await _websiteService.UpdateRangeAsync(viewModels);
+            return Ok();
+        }
     }
 }
