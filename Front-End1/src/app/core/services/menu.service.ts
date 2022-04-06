@@ -39,6 +39,10 @@ export class MenuService {
             routerLink: '/crawl/calculate-url',
           },
           {
+            name: 'Root Url',
+            routerLink: '/crawl/root-url',
+          },
+          {
             name: 'Setting Website',
             routerLink: '/crawl/setting-website',
           },

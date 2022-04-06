@@ -20,6 +20,10 @@ const routes: Routes = [
         loadChildren: () => import('../../features/crawl/calculate-url/calculate-url.module').then(c => c.CalculateUrlModule)
       },
       {
+        path: 'crawl/root-url',
+        loadChildren: () => import('../../features/crawl/root-url/root-url.module').then(c => c.RootUrlModule)
+      },
+      {
         path: 'crawl/setting-website',
         loadChildren: () => import('../../features/crawl/setting-website/setting-website.module').then(c => c.SettingWebsiteModule)
       },

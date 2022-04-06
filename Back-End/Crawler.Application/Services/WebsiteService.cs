@@ -13,5 +13,11 @@ namespace Crawler.Application.Services
         public WebsiteService(IMapper mapper, IWebsiteRepository repository) : base(mapper, repository)
         {
         }
+
+        public void TriggerError()
+        {
+            var data = new WebsiteEntity();
+            data.Name.Trim();
+        }
     }
 }

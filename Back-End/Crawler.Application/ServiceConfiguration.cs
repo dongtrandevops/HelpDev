@@ -24,7 +24,8 @@ namespace Crawler.Application
         public static void AddConfigMapper(this IServiceCollection services)
         {
             services.AddAutoMapper(
-                typeof(WebsiteMappingProfile)
+                typeof(WebsiteMappingProfile),
+                typeof(CategoryMappingProfile)
                 );
         }
     }

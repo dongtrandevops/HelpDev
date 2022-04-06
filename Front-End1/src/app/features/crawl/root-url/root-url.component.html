@@ -1,0 +1,82 @@
+<div class="container">
+  <form action="">
+    <div class="row">
+      <div class="col">
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="w-100" appearance="fill">
+              <mat-label>Website</mat-label>
+              <mat-select>
+                <mat-option *ngFor="let website of websites" [value]="website.id">
+                  {{website.name}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+  
+          <div class="col">
+            <mat-form-field class="w-100" appearance="fill">
+              <mat-label>Category</mat-label>
+              <mat-select>
+                <mat-option *ngFor="let category of categories" [value]="category.id">
+                  {{category.name}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+  
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="w-100" appearance="fill">
+              <mat-label>Url</mat-label>
+              <input matInput>
+            </mat-form-field>
+          </div>
+        </div>
+  
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="w-100" appearance="fill">
+              <mat-label>Total item css selector</mat-label>
+              <input matInput>
+            </mat-form-field>
+          </div>
+  
+          <div class="col">
+            <mat-form-field class="w-100" appearance="fill">
+              <mat-label>Total item xpath selector</mat-label>
+              <input matInput>
+            </mat-form-field>
+          </div>
+        </div>
+  
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="w-100" appearance="fill">
+              <mat-label>Key loop</mat-label>
+              <input matInput>
+            </mat-form-field>
+          </div>
+  
+          <div class="col">
+            <mat-form-field class="w-100" appearance="fill">
+              <mat-label>Item per page</mat-label>
+              <input matInput>
+            </mat-form-field>
+          </div>
+        </div>
+  
+        <div class="row">
+          <div class="col">
+            <mat-slide-toggle color="primary">Auto calculate page</mat-slide-toggle>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+
+  <div class="root-urls-container">
+
+  </div>
+</div>
