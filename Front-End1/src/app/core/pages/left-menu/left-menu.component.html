@@ -1,6 +1,6 @@
 <mat-toolbar></mat-toolbar>
 <mat-nav-list>
-  <mat-accordion class="left-menu-accordion" multi [displayMode]="'flat'" #menu>
+  <mat-accordion class="left-menu-accordion" multi [displayMode]="'flat'" #menu >
     <ng-container *ngFor="let menu of menus; let index = index">
       <a *ngIf="!menu.childMenus" mat-list-item [routerLink]="[menu.routerLink]" [routerLinkActive]="['actived-parent-menu']"
         (click)="onClickParentMenu(index)">

@@ -11,6 +11,7 @@ import { MatSidenav } from '@angular/material/sidenav';
 })
 export class MainPageComponent {
   @ViewChild(MatSidenav) drawer: MatSidenav;
+  isChangeTheme: boolean;
 
   isSmalDevice = false;
   constructor(private breakpointObserver: BreakpointObserver) { }
@@ -29,6 +30,10 @@ export class MainPageComponent {
     if (this.isSmalDevice) {
       this.drawer.toggle();
     }
+  }
+
+  toggleEvent() {
+    this.isChangeTheme = !this.isChangeTheme;
   }
 
 }

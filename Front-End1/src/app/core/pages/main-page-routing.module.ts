@@ -16,6 +16,10 @@ const routes: Routes = [
         loadChildren: () => import('../../features/working/working.module').then(c => c.WorkingModule)
       },
       {
+        path: 'learning',
+        loadChildren: () => import('../../features/learning/learning.module').then(c => c.LearningModule)
+      },
+      {
         path: 'crawl/calculate-url',
         loadChildren: () => import('../../features/crawl/calculate-url/calculate-url.module').then(c => c.CalculateUrlModule)
       },

@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { ButtonType } from 'src/app/core/enums/ui.enum';
 import { CategoryDTO } from 'src/app/core/models/category.model';
 import { WebsiteDTO } from 'src/app/core/models/website.model';
 import { BaseHttpService } from 'src/app/core/services/base.service';
@@ -13,6 +14,8 @@ import { environment } from 'src/environments/environment.dev';
 export class RootUrlComponent implements OnInit {
   categories: CategoryDTO[];
   websites: WebsiteDTO[];
+  buttonType = ButtonType;
+  isSaving: boolean;
 
   constructor(
     private http: HttpClient

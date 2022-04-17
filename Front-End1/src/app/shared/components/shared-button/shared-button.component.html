@@ -3,7 +3,7 @@
 		<mat-spinner diameter="26"></mat-spinner>
 		<!-- <mat-progress-bar mode="indeterminate"></mat-progress-bar> -->
 	</div>
-	<button [type]="type" mat-raised-button color="primary" disabled="true" [disabled]="isLoading">
+	<button [type]="type" mat-raised-button color="primary" [disabled]="isLoading">
 		<ng-content></ng-content>
 	</button>
 </div>

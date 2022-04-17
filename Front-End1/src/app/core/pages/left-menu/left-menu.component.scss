@@ -1,17 +1,21 @@
-@import "color";
+@use "color" as color;
+@import "helpdev.theme";
+
+$primary-color: var(--mat-primary-color);
+$primary-actived-orverlay-color: var(--mat-primary-actived-orverlay-color);
 
 .left-menu-accordion {
   a.actived-parent-menu {
-    background-color: $actived-orverlay-indigo;
-    color: $indigo;
+    background-color: $primary-actived-orverlay-color;
+    color: var(--mat-primary-color);
 
     &:hover,
     &:focus {
-      background-color: $actived-orverlay-indigo;
+      background-color: $primary-actived-orverlay-color;
     }
 
     mat-icon {
-      color: $indigo;
+      color: var(--mat-primary-color);
     }
   }
 
@@ -28,7 +32,7 @@
       padding-left: 16px;
       padding-right: 16px;
       &:hover {
-        background: $black-04-opacity;
+        background: color.$mat-black-04-opacity;
       }
     }
 
@@ -46,42 +50,42 @@
 
   mat-icon {
     margin-right: 16px;
-    color: $grey-600;
+    color: color.$mat-grey-600;
   }
 
   .mat-actived-expansion-panel-header {
-    background-color: $actived-orverlay-indigo;
+    background-color: $primary-actived-orverlay-color;
 
     &:hover {
-      background: $actived-orverlay-indigo !important;
+      background: $primary-actived-orverlay-color !important;
     }
 
     &:focus {
-      background: $actived-orverlay-indigo;
+      background: $primary-actived-orverlay-color;
     }
 
     .mat-expansion-panel-header-title {
-      color: $indigo;
+      color: var(--mat-primary-color);
       .mat-icon {
-        color: $indigo;
+        color: var(--mat-primary-color);
       }
     }
 
     ::ng-deep .mat-expansion-indicator {
       &:after {
-        color: $indigo;
+        color: var(--mat-primary-color);
       }
     }
   }
 
   a.actived-child-menu {
     &:hover {
-      color: $indigo;
+      color: var(--mat-primary-color);
     }
     &:focus {
-      color: $indigo;
-      background: $white;
+      color: var(--mat-primary-color);
+      background: color.$mat-white;
     }
-    color: $indigo;
+    color: var(--mat-primary-color);
   }
 }

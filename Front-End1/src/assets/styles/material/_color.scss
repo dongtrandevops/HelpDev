@@ -1,0 +1,38 @@
+@use "@angular/material" as mat;
+
+$default-hue: 500;
+$actived-orverlay-default-hue: 50;
+$mat-white: #ffff;
+$mat-black-87-opacity: rgba(black, 0.87);
+$mat-black-04-opacity: rgba(black, 0.04);
+
+$mat-indigo-palette: mat.define-palette(mat.$indigo-palette);
+$mat-pink-palette: mat.define-palette(mat.$pink-palette);
+
+$mat-deep-purple-palette: mat.define-palette(mat.$deep-purple-palette);
+$mat-amber-palette: mat.define-palette(mat.$amber-palette);
+
+$mat-green-palette: mat.define-palette(mat.$green-palette);
+$mat-yellow-palette: mat.define-palette(mat.$yellow-palette);
+$mat-red-palette: mat.define-palette(mat.$red-palette);
+
+$mat-blue-palette: mat.define-palette(mat.$blue-palette);
+$mat-grey-palette: mat.define-palette(mat.$grey-palette);
+
+// color
+$mat-indigo: mat.get-color-from-palette($mat-indigo-palette);
+$mat-actived-orverlay-indigo: mat.get-color-from-palette($mat-indigo-palette, $actived-orverlay-default-hue);
+
+$mat-pink: mat.get-color-from-palette($mat-pink-palette);
+
+$mat-deep-purple: mat.get-color-from-palette($mat-deep-purple-palette);
+$mat-actived-orverlay-deep-purple: mat.get-color-from-palette($mat-deep-purple-palette, $actived-orverlay-default-hue);
+
+$mat-amber: mat.get-color-from-palette($mat-amber-palette);
+
+$mat-green: mat.get-color-from-palette($mat-green-palette);
+
+$mat-yellow: mat.get-color-from-palette($mat-yellow-palette);
+$mat-red: mat.get-color-from-palette($mat-red-palette);
+$mat-blue: mat.get-color-from-palette($mat-blue-palette);
+$mat-grey-600: mat.get-color-from-palette($mat-grey-palette, 600);
