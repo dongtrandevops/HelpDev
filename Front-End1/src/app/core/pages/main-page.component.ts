@@ -14,7 +14,9 @@ export class MainPageComponent {
   isChangeTheme: boolean;
 
   isSmalDevice = false;
-  constructor(private breakpointObserver: BreakpointObserver) { }
+  constructor(
+    private breakpointObserver: BreakpointObserver
+  ) { }
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe('(max-width: 1439px)')
     .pipe(

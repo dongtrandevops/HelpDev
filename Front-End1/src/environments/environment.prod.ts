@@ -1,5 +1,9 @@
 export const environment = {
   crawlerApi: "",
   helpdevApi: "",
-  production: true
+  production: true,
+  theme: {
+    color: '',
+    appearanceFormField: ''
+  }
 };
