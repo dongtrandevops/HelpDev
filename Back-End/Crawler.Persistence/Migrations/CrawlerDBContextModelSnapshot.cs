@@ -57,6 +57,65 @@ namespace Crawler.Persistence.Migrations
                     b.ToTable("Category");
                 });
 
+            modelBuilder.Entity("Crawler.Domain.Entities.RootUrlEntity", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"), 1L, 1);
+
+                    b.Property<long?>("CategoryId")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("CreatedBy")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<DateTime?>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool?>("IsCalculatePage")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("ItemPerPage")
+                        .HasColumnType("int");
+
+                    b.Property<string>("KeyLoop")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("KeyLoop1")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TotalItemCssSelector")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TotalItemXPathSelector")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UpdatedBy")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Url")
+                        .IsRequired()
+                        .HasMaxLength(250)
+                        .HasColumnType("nvarchar(250)");
+
+                    b.Property<long?>("WebsiteId")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("RootUrl");
+                });
+
             modelBuilder.Entity("Crawler.Domain.Entities.WebsiteEntity", b =>
                 {
                     b.Property<long>("Id")

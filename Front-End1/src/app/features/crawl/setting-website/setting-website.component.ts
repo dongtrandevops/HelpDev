@@ -5,17 +5,20 @@ import { CdkDragDrop, CdkDragEnter, moveItemInArray } from '@angular/cdk/drag-dr
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ButtonType } from 'src/app/core/enums/ui.enum';
 import { NotificationService } from 'src/app/core/services/notification.service';
+import { MAT_FORM_FIELD } from '@angular/material/form-field';
+import { environment } from 'src/environments/environment.dev';
 
 @Component({
   selector: 'hd-setting-website',
   templateUrl: './setting-website.component.html',
-  styleUrls: ['./setting-website.component.scss']
+  styleUrls: ['./setting-website.component.scss'],
 })
 export class SettingWebsiteComponent implements OnInit {
   websites: WebsiteDTO[] = [];
   isDisabledResetBtn: boolean = true;
   isSaving: boolean;
   buttonType = ButtonType;
+  theme = environment.theme;
 
   websiteFormGroup = new FormGroup({
     id: new FormControl(0),
@@ -31,11 +34,14 @@ export class SettingWebsiteComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.theme.appearanceFormField = 'outline'
+
     this.websiteService.getAll().subscribe(
       data => {
         this.websites = data;
       }
     )
+    
   }
 
   onClickWebsite(website: WebsiteDTO, index: number) {

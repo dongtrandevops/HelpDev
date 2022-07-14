@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { environment } from 'src/environments/environment.dev';
 
 @Component({
   selector: 'hd-header',
@@ -14,5 +15,6 @@ export class HeaderComponent implements OnInit {
 
   toggleTheme() {
     this.$toggleEvent.emit();
+    environment.theme.appearanceFormField = environment.theme.appearanceFormField === 'outline' ? 'fill' : 'outline';
   }
 }

@@ -14,6 +14,7 @@ import { MatListModule } from '@angular/material/list';
 import { MainPageComponent } from './main-page.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { ToastComponent } from './components/toast/toast.component';
+import { MatFormField, MAT_FORM_FIELD } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,11 @@ import { ToastComponent } from './components/toast/toast.component';
     MatListModule,
     MatSnackBarModule,
     MatExpansionModule,
+  ],
+  providers: [
+    {
+      provide: MAT_FORM_FIELD, useValue: { appearance: 'outline' }
+    }
   ]
 })
 export class MainPageModule { }
