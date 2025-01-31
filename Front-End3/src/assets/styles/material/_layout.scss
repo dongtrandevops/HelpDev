@@ -1,0 +1,63 @@
+.mat-container {
+  margin-top: 16px;
+}
+
+@media (max-width: 599px) {
+  .mat-container {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 904px) {
+  .mat-container {
+    margin-left: 32px;
+    margin-right: 32px;
+  }
+}
+
+@media (min-width: 905px) and (max-width: 1239px) {
+  .mat-container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 840px;
+  }
+}
+
+@media (min-width: 1240px) and(max-width: 1439px) {
+  .mat-container {
+    margin-left: 200px;
+    margin-right: 200px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .mat-container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1040px;
+  }
+}
+
+.d-flex {
+  display: flex;
+}
+
+.float-end {
+  float: right;
+}
+
+.justify-content-end {
+  justify-content: flex-end;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}

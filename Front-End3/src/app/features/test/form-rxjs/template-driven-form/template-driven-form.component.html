@@ -1,0 +1,11 @@
+<p>template-driven-form works!</p>
+
+<form class="example-form" #mainForm="ngForm" novalidate>
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Email</mat-label>
+        <input type="email" matInput name="email" [(ngModel)]="person.email" (input)="$onFilterEmail.next(null)">
+    </mat-form-field>
+
+    <br>
+    <button mat-raised-button color="primary" [disabled]="!mainForm.valid">Primary</button>
+</form>

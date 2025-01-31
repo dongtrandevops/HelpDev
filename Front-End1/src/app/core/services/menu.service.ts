@@ -49,6 +49,16 @@ export class MenuService {
         ] as Menu[]
       },
       {
+        name: 'Trading',
+        matIcon: 'paid',
+        childMenus: [
+          {
+            name: 'History',
+            routerLink: '/trading/history',
+          },
+        ] as Menu[]
+      },
+      {
         name: 'Relax',
         routerLink: '/relax',
         matIcon: 'games'

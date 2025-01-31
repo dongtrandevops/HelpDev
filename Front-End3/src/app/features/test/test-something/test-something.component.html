@@ -1,0 +1,24 @@
+<div class="row">
+    <div class="col-2">
+        <button (click)="onAdd()"> add </button>
+
+        <p *ngFor="let value of arr | slice:start:end ;let i = index">
+            {{value.name}} - {{i}} - {{value.type}}
+            <button (click)="onDelete(i,value.type)">-</button>
+
+        </p>
+        <br>
+
+
+    </div>
+
+    <div class="col">
+        <button (click)="onAdd1()"> add </button>
+
+        <p *ngFor="let value of arr | slice:start1:end1 ;let i = index">
+            {{value.name}} - {{i}} - {{value.type}}
+            <button (click)="onDelete(i,value.type)">-</button>
+        </p>
+        <br>
+    </div>
+</div>

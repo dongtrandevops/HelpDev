@@ -32,6 +32,10 @@ const routes: Routes = [
         loadChildren: () => import('../../features/crawl/setting-website/setting-website.module').then(c => c.SettingWebsiteModule)
       },
       {
+        path: 'trading/history',
+        loadChildren: () => import('../../features/trading/trading-history/trading-history.module').then(c => c.TradingHistoryModule)
+      },
+      {
         path: 'test/responsive',
         loadChildren: () => import('../../features/test/test-responsive/test-responsive.module').then(c => c.TestResponsiveModule)
       },

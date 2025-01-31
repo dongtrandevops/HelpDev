@@ -1,0 +1,19 @@
+  <mat-sidenav-container class="sidenav-container" [ngClass]="isChangeTheme ? 'deep-purple-theme':'' ">
+    <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false" [autoFocus]="false">
+      <hd-left-menu (clickMenu)="onClickOnLeftMenu()"></hd-left-menu>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <mat-toolbar color="primary">
+        <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+        <span class="example-spacer"></span>
+        <hd-header ($toggleEvent)="toggleEvent()"></hd-header>
+      </mat-toolbar>
+      <div class="p-md-4 p-sm-3 p-xs-3 router-outlet-container">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+

@@ -1,0 +1,34 @@
+@use "@angular/material" as mat;
+@use "color";
+@include mat.core();
+
+:root {
+  --mat-primary-color: #{color.$mat-indigo};
+  --mat-primary-actived-orverlay-color: #{color.$mat-actived-orverlay-indigo};
+}
+
+$indigo-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: color.$mat-indigo-palette,
+      accent: color.$mat-pink-palette,
+    ),
+  )
+);
+
+@include mat.all-component-themes($indigo-theme);
+
+.deep-purple-theme {
+  --mat-primary-color: #{color.$mat-deep-purple};
+  --mat-primary-actived-orverlay-color: #{color.$mat-actived-orverlay-deep-purple};
+
+  $deep-purple-theme: mat.define-light-theme(
+    (
+      color: (
+        primary: color.$mat-deep-purple-palette,
+        accent: color.$mat-amber-palette,
+      ),
+    )
+  );
+  @include mat.all-component-colors($deep-purple-theme);
+}

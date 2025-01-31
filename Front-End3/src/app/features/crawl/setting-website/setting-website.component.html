@@ -1,0 +1,60 @@
+<div class="container">
+  
+  <form [formGroup]="websiteFormGroup" (ngSubmit)="onSubmit()">
+    <div class="row">
+      <div class="col">
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="w-100" [appearance]="theme.appearanceFormField">
+              <mat-label>Url</mat-label>
+              <input matInput formControlName="url">
+
+              <mat-error *ngIf="websiteFormGroup.get('url')?.hasError('required')">
+                Url is required
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="col">
+            <mat-form-field class="w-100" >
+              <mat-label>Name</mat-label>
+              <input matInput formControlName="name">
+
+              <mat-error *ngIf="websiteFormGroup.get('name')?.hasError('required')">
+                Name is required
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <mat-form-field class="w-100" >
+              <mat-label>Cookie</mat-label>
+              <textarea class="cookie-container" spellcheck="false" matInput
+                formControlName="requestHeaderCookie"></textarea>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      
+
+      <div class="col">
+        <div cdkDropList class="example-list w-100" (cdkDropListDropped)="onDroped($event)">
+          <div *ngFor="let website of websites let i = index" class="example-box"
+            [ngClass]="website.isSelected ? 'selected-website':''" cdkDrag (click)="onClickWebsite(website, i)">
+            {{website.name}}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col w-100">
+        <hd-shared-button [isLoading]="isSaving" [type]="buttonType.Submit" class="float-end">SAVE</hd-shared-button>
+        <button [type]="buttonType.Reset" class="float-end me-2" (click)="onResetForm()"
+          mat-raised-button>Reset</button>
+      </div>
+    </div>
+  </form>
+</div>

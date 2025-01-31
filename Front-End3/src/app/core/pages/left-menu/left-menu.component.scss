@@ -1,0 +1,91 @@
+@use "color" as color;
+@import "helpdev.theme";
+
+$primary-color: var(--mat-primary-color);
+$primary-actived-orverlay-color: var(--mat-primary-actived-orverlay-color);
+
+.left-menu-accordion {
+  a.actived-parent-menu {
+    background-color: $primary-actived-orverlay-color;
+    color: var(--mat-primary-color);
+
+    &:hover,
+    &:focus {
+      background-color: $primary-actived-orverlay-color;
+    }
+
+    mat-icon {
+      color: var(--mat-primary-color);
+    }
+  }
+
+  mat-panel-title {
+    font-size: 16px;
+    align-items: center;
+  }
+
+  mat-expansion-panel {
+    border-radius: 0;
+    box-shadow: none !important;
+
+    mat-expansion-panel-header {
+      padding-left: 16px;
+      padding-right: 16px;
+      &:hover {
+        background: color.$mat-black-04-opacity;
+      }
+    }
+
+    ::ng-deep .mat-expansion-panel-body {
+      padding: 0 24px;
+    }
+
+    .child-menu {
+      height: 40px;
+      ::ng-deep .mat-list-item-content {
+        padding-left: 34px;
+      }
+    }
+  }
+
+  mat-icon {
+    margin-right: 16px;
+    color: color.$mat-grey-600;
+  }
+
+  .mat-actived-expansion-panel-header {
+    background-color: $primary-actived-orverlay-color;
+
+    &:hover {
+      background: $primary-actived-orverlay-color !important;
+    }
+
+    &:focus {
+      background: $primary-actived-orverlay-color;
+    }
+
+    .mat-expansion-panel-header-title {
+      color: var(--mat-primary-color);
+      .mat-icon {
+        color: var(--mat-primary-color);
+      }
+    }
+
+    ::ng-deep .mat-expansion-indicator {
+      &:after {
+        color: var(--mat-primary-color);
+      }
+    }
+  }
+
+  a.actived-child-menu {
+    &:hover {
+      color: var(--mat-primary-color);
+    }
+    &:focus {
+      color: var(--mat-primary-color);
+      background: color.$mat-white;
+    }
+    color: var(--mat-primary-color);
+  }
+}
